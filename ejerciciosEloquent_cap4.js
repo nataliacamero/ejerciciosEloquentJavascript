@@ -13,16 +13,43 @@ utilizado para cuando construyas el array. Si no se da ningún paso, los element
 al comportamiento anterior. La llamada a la función rango(1, 10, 2) deberia retornar [1, 3, 5, 7, 9]. Asegúrate de que también
 funcione con valores de pasos negativos para que rango(5, 2, -1) produzca [5, 4, 3, 2].*/
 
-function rango(inicio,final) {
+function rango(inicio,final,paso) {
     let array = [];
-  
-    for (let i = 0; i < final; i++) {
-        array.push(inicio);
-        inicio++;
-    }
-    return array;
+    
+
+    while (inicio <= final) {
+        
+        for (let i = 1; i <= final; i++) {
+            
+            array.push(inicio);
+                
+            
+            
+            if (paso) {
+                inicio+= paso
+            } else {
+                inicio++;
+            }
+            
+            
+            
+            
+        };
+    };
+
+    
+        return array;
 };
 
 
+let suma = array => {
+    let acumulado = 0;
+    for (const element of array) {
+       acumulado+= element
+    }
+    return acumulado;
+ };
 
-console.log(rango(1, 10));
+
+console.log(rango(1, 10, 3));
+console.log(suma(rango(1, 10)));
